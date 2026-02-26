@@ -98,7 +98,7 @@ export default function Contact() {
                         <ul className="contact__info-list">
                             <li>
                                 <span className="info-icon"><Mail size={18} /></span>
-                                <a href="mailto:ruthuvarshan18@gmail.com">ruthuvarshan18@gmail.com</a>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ruthuvarshan18@gmail.com" target="_blank" rel="noopener noreferrer">ruthuvarshan18@gmail.com</a>
                             </li>
                             <li>
                                 <span className="info-icon"><Linkedin size={18} /></span>

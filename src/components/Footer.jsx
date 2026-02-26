@@ -4,8 +4,8 @@ import { useTheme } from '../context/ThemeContext'
 
 const socialLinks = [
     { label: 'GitHub', icon: <Github size={20} />, href: 'https://github.com/ruthuvarshan' },
-    { label: 'LinkedIn', icon: <Linkedin size={20} />, href: 'https://linkedin.com/in/ruthuvarshan' },
-    { label: 'Email', icon: <Mail size={20} />, href: 'mailto:ruthuvarshan@gmail.com' },
+    { label: 'LinkedIn', icon: <Linkedin size={20} />, href: 'https://www.linkedin.com/in/ruthuvarshan-elango/' },
+    { label: 'Email', icon: <Mail size={20} />, href: 'https://mail.google.com/mail/?view=cm&fs=1&to=ruthuvarshan18@gmail.com' },
 ]
 
 export default function Footer() {
