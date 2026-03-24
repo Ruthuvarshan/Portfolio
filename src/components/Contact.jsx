@@ -1,9 +1,10 @@
 import React, { useState, useRef } from 'react'
-import { Mail, Linkedin, Github, MapPin, Send, CheckCircle, Loader, Flame } from 'lucide-react'
+import { Mail, Linkedin, Github, MapPin, Send, CheckCircle, Loader, Flame, Lock } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 
 export default function Contact() {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+    const MAX_CHARS = 1000
     const [sent, setSent] = useState(false)
     const [sending, setSending] = useState(false)
     const formRef = useRef(null)
@@ -174,9 +175,19 @@ export default function Contact() {
                                             id="message" name="message"
                                             placeholder={characterTheme === 'spider' ? "With great power comes great responsibility..." : "Wisdom is an omnipotent weapon..."}
                                             value={formData.message}
-                                            onChange={handleChange}
+                                            onChange={e => {
+                                                if (e.target.value.length <= MAX_CHARS) handleChange(e)
+                                            }}
                                             required
                                         />
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.4rem' }}>
+                                            <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                                                <Lock size={11} /> Secure delivery
+                                            </span>
+                                            <span style={{ fontSize: '0.75rem', color: formData.message.length > MAX_CHARS * 0.9 ? 'var(--primary)' : 'var(--text-dim)' }}>
+                                                {formData.message.length}/{MAX_CHARS}
+                                            </span>
+                                        </div>
                                     </div>
 
                                     <button

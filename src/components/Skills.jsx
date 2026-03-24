@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { Monitor, Server, Brain, Database, Cloud, Wrench, Zap } from 'lucide-react'
+import './marquee.css'
+import SkillBars from './SkillBars'
 
 const skillCategories = [
     {
@@ -74,6 +76,41 @@ export default function Skills() {
                         Strands in my web — each skill woven together to build something extraordinary.
                     </p>
                 </div>
+
+                {/* Animated Logo Marquee */}
+                <div style={{ margin: '3rem 0', overflow: 'hidden', position: 'relative', width: '100%' }}>
+                    <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '80px', background: 'linear-gradient(to right, var(--bg-main), transparent)', zIndex: 10, pointerEvents: 'none' }}></div>
+                    <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '80px', background: 'linear-gradient(to left, var(--bg-main), transparent)', zIndex: 10, pointerEvents: 'none' }}></div>
+                    
+                    {/* The array of skills from the resume */}
+                    <div className="animate-marquee" style={{ display: 'flex', width: 'max-content', whiteSpace: 'nowrap', animation: 'marquee 35s linear infinite' }}>
+                        {[...Array(2)].map((_, mapIndex) => (
+                            <div key={`marquee-set-${mapIndex}`} style={{ display: 'flex' }}>
+                                {[
+                                    { name: 'Python', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' }, 
+                                    { name: 'C', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg' }, 
+                                    { name: 'Java', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg' },
+                                    { name: 'React', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' }, 
+                                    { name: 'HTML5', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg' }, 
+                                    { name: 'CSS3', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg' },
+                                    { name: 'JavaScript', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' }, 
+                                    { name: 'IBM Cloud', src: 'https://www.vectorlogo.zone/logos/ibm_cloud/ibm_cloud-icon.svg' }, 
+                                    { name: 'Azure', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg' }, 
+                                    { name: 'Git', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' }, 
+                                    { name: 'GitHub', src: 'https://cdn.simpleicons.org/github/FFFFFF' }
+                                ].map((skill, i) => (
+                                    <div key={`skill-${mapIndex}-${i}`} className="skill-logo-card">
+                                        <img src={skill.src} alt={skill.name} />
+                                        <span>{skill.name}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Neon Skill Progress Bars */}
+                <SkillBars />
 
                 {/* Decorative web lines at top */}
                 <WebDecoration />

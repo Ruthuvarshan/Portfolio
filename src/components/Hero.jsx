@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Eye } from 'lucide-react'
+import { Eye, Download } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 
 // Generate rain drops with parallax depth
@@ -138,6 +138,9 @@ export default function Hero() {
                     </a>
                     <a href="#contact" className="btn-secondary" onClick={scrollToContact}>
                         Get In Touch
+                    </a>
+                    <a href="/Resume.pdf" target="_blank" rel="noreferrer" className="btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', borderColor: 'var(--primary)', color: 'var(--primary)' }}>
+                        <Download size={18} /> Resume
                     </a>
                 </div>
             </div>

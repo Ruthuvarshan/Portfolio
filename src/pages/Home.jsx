@@ -67,6 +67,14 @@ const Home = () => {
                         >
                             Contact Me
                         </a>
+                        <a
+                            href="/resume.pdf"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-8 py-3 rounded-full border border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white transition-all duration-300 backdrop-blur-sm flex items-center gap-2"
+                        >
+                            Resume <Download size={20} />
+                        </a>
                     </div>
                 </motion.div>
             </div>
