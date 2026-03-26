@@ -3,19 +3,19 @@ import { motion } from 'framer-motion'
 import { Code2, Wrench } from 'lucide-react'
 
 const languages = [
-    { name: 'Python', pct: 85 },
+    { name: 'HTML & CSS', pct: 60 },
+    { name: 'Python', pct: 60 },
+    { name: 'JavaScript', pct: 50 },
     { name: 'Java', pct: 75 },
     { name: 'C', pct: 70 },
-    { name: 'JavaScript', pct: 65 },
-    { name: 'HTML & CSS', pct: 90 },
 ]
 
 const tools = [
     { name: 'IBM Cloud', pct: 70 },
     { name: 'Microsoft Azure', pct: 60 },
     { name: 'Git & GitHub', pct: 85 },
-    { name: 'React', pct: 75 },
-    { name: 'Scikit-learn / TensorFlow', pct: 70 },
+    { name: 'React', pct: 40 },
+    { name: 'Scikit-learn / TensorFlow', pct: 30 },
 ]
 
 export default function SkillBars() {

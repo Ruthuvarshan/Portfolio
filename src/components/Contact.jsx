@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { Mail, Linkedin, Github, MapPin, Send, CheckCircle, Loader, Flame, Lock } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
+import Earth3D from './Earth3D'
 
 export default function Contact() {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -46,48 +47,10 @@ export default function Contact() {
                 <div className="contact__split">
                     {/* Left – info */}
                     <div className="contact__left">
-                        {/* Signal */}
-                        <div className="contact__signal">
-                            <div className="signal-beam" />
-                            <div className="signal-beam" />
-                            <div className="signal-beam" />
-                            {characterTheme === 'spider' ? (
-                                <svg className="signal-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                                    {/* City skyline silhouette */}
-                                    <rect fill="var(--bg-secondary)" x="0" y="80" width="120" height="40" />
-                                    <rect fill="var(--bg-main)" x="5" y="65" width="15" height="55" />
-                                    <rect fill="var(--bg-main)" x="25" y="72" width="12" height="48" />
-                                    <rect fill="var(--bg-main)" x="42" y="60" width="18" height="60" />
-                                    <rect fill="var(--bg-main)" x="65" y="68" width="14" height="52" />
-                                    <rect fill="var(--bg-main)" x="84" y="74" width="12" height="46" />
-                                    <rect fill="var(--bg-main)" x="100" y="62" width="16" height="58" />
-                                    {/* Spider signal beam */}
-                                    <path d="M 60 20 L 20 80" stroke="var(--primary)" strokeWidth="1.5" opacity="0.3" />
-                                    <path d="M 60 20 L 40 80" stroke="var(--primary)" strokeWidth="1.5" opacity="0.4" />
-                                    <path d="M 60 20 L 60 80" stroke="var(--primary)" strokeWidth="2" opacity="0.5" />
-                                    <path d="M 60 20 L 80 80" stroke="var(--primary)" strokeWidth="1.5" opacity="0.4" />
-                                    <path d="M 60 20 L 100 80" stroke="var(--primary)" strokeWidth="1.5" opacity="0.3" />
-                                    {/* Spider Image */}
-                                    <image href="/spiderman_image.png" x="45" y="5" width="30" height="30" />
-                                </svg>
-                            ) : (
-                                <svg className="signal-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                                    {/* Mountain silhouette */}
-                                    <path d="M 0 120 L 20 70 L 40 100 L 70 50 L 100 90 L 120 60 L 120 120 Z" fill="var(--bg-secondary)" />
-                                    {/* Dragon eye signal */}
-                                    <path d="M 60 20 L 30 80" stroke="var(--primary)" strokeWidth="1.5" opacity="0.3" />
-                                    <path d="M 60 20 L 50 80" stroke="var(--primary)" strokeWidth="2" opacity="0.5" />
-                                    <path d="M 60 20 L 70 80" stroke="var(--primary)" strokeWidth="2" opacity="0.5" />
-                                    <path d="M 60 20 L 90 80" stroke="var(--primary)" strokeWidth="1.5" opacity="0.3" />
-                                    {/* Dragon Logo Graphic */}
-                                    <image href="/green-dragon-logo.png" x="45" y="5" width="30" height="30" />
-                                </svg>
-                            )}
+                        {/* 3D Earth Graphic */}
+                        <div style={{ marginBottom: '1rem', width: '100%', height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <Earth3D />
                         </div>
-
-                        <p className="signal-click-hint" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
-                            {characterTheme === 'spider' ? <><Send size={16} /> Send a Signal</> : <><Flame size={16} /> Summon the Dragon</>}
-                        </p>
 
                         <h2 className="section-title contact__title">
                             Let's <span className="red">Connect</span>

@@ -7,12 +7,12 @@ const skillCategories = [
     {
         title: 'Frontend',
         icon: <Monitor size={18} />,
-        skills: ['React', 'HTML5', 'CSS3', 'JavaScript', 'Vite', 'Framer Motion'],
+        skills: ['React', 'HTML5', 'CSS3', 'JavaScript'],
     },
     {
         title: 'Backend',
         icon: <Server size={18} />,
-        skills: ['Python', 'Java', 'PHP', 'Node.js', 'REST APIs'],
+        skills: ['Python', 'Java', 'PHP', 'Node.js'],
     },
     {
         title: 'AI / ML',
@@ -22,17 +22,17 @@ const skillCategories = [
     {
         title: 'Databases',
         icon: <Database size={18} />,
-        skills: ['MySQL', 'MongoDB', 'PostgreSQL', 'SQLite'],
+        skills: ['MySQL', 'MongoDB', 'SQLite'],
     },
     {
         title: 'DevOps & Cloud',
         icon: <Cloud size={18} />,
-        skills: ['Git', 'GitHub', 'Linux', 'Docker', 'Vercel', 'CI/CD'],
+        skills: ['Git', 'GitHub', 'Linux', 'Docker'],
     },
     {
         title: 'Tools',
         icon: <Wrench size={18} />,
-        skills: ['IBM Cognos', 'Jupyter', 'VS Code', 'Figma', 'Postman'],
+        skills: ['IBM Cognos', 'Jupyter', 'VS Code', 'Figma'],
     },
 ]
 
@@ -101,7 +101,7 @@ export default function Skills() {
                                 ].map((skill, i) => (
                                     <div key={`skill-${mapIndex}-${i}`} className="skill-logo-card">
                                         <img src={skill.src} alt={skill.name} />
-                                        <span>{skill.name}</span>
+                                        <span style={{ color: 'var(--text-main)' }}>{skill.name}</span>
                                     </div>
                                 ))}
                             </div>

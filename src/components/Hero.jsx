@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Eye, Download } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
+import Hero3D from './Hero3D'
 
 // Generate rain drops with parallax depth
 function RainLayer() {
@@ -95,8 +96,13 @@ export default function Hero() {
             {/* Shockwave */}
             <Shockwave active={shockwave} />
 
+            {/* 3D Distorted Sphere Layer */}
+            <div style={{ position: 'absolute', right: '5%', top: '50%', transform: 'translateY(-50%)', width: '500px', height: '500px', zIndex: 1, pointerEvents: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hide-on-mobile">
+                <Hero3D />
+            </div>
+
             {/* Content */}
-            <div className="hero__content">
+            <div className="hero__content" style={{ zIndex: 2, position: 'relative' }}>
                 {/* Falling Icon */}
                 <div className="hero__spider-icon">
                     {characterTheme === 'spider' ? (

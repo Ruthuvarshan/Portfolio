@@ -41,7 +41,7 @@ export default function Footer() {
                 </div>
 
                 <p className="footer__copy">
-                    © 2026 Ruthuvarshan · Built with React + Vite · Designed in the Dev-Verse
+                    © 2026 Ruthuvarshan · Built with React · Designed in the Dev-Verse
                 </p>
             </div>
         </footer>

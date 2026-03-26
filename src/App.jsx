@@ -9,14 +9,14 @@ import Timeline from './components/Timeline'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WebCursor from './components/WebCursor'
-import ChatbotFAB from './components/ChatbotFAB'
+import Particles3D from './components/Particles3D'
 
 export default function App() {
     return (
         <div className="app">
+            <Particles3D />
             <WebCursor />
             <Navbar />
-            <ChatbotFAB />
             <main>
                 <Hero />
                 <VisionMission />
